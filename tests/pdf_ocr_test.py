@@ -1,4 +1,3 @@
-from email.mime import image
 import os
 import io
 import PyPDF2
@@ -16,7 +15,7 @@ def scanned_pdf(path):
 
     try:
 
-        with open(path,'rb') as file
+        with open(path,'rb') as file:
             the_pdf = PyPDF2.PdfReader(file)
 
             if len(the_pdf.pages) < 1:
@@ -25,8 +24,8 @@ def scanned_pdf(path):
 
             first_page = the_pdf.pages[0]
 
-            if '/resources' in first_page and '/XObject' in first_page['/resources']:
-                the_object = first_page['/resources']['/XObject'].get_object()
+            if '/Resources' in first_page and '/XObject' in first_page['/Resources']:
+                the_object = first_page['/Resources']['/XObject'].get_object() 
 
                 for obj in the_object:
                     if the_object[obj]['/Subtype'] == '/Image':
@@ -37,6 +36,7 @@ def scanned_pdf(path):
                         text = pytesseract.image_to_string(image,lang='eng')
                         print("Extracted text from scanned PDF: ", text)
                         print("*"*20 + "scanning has been complated!" + "*"*20)
+                        return 
 
             print("There is no image can be extracted from the PDF")
 
