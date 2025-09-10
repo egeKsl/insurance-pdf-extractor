@@ -1,5 +1,5 @@
 ﻿from urllib import response
-import request 
+import requests
 import json
 
 def test_ollama_api(text):
@@ -10,11 +10,11 @@ def test_ollama_api(text):
         return
 
     try:
-        promt = "briefly summarize the following text: " + text + "'"
+        prompt = "briefly summarize the following text: " + text + "'"
 
         payload = {
             "model" : "llama3",
-            "promt" : promt,
+            "prompt" : prompt,
             "stream" : False
         }
 
@@ -38,12 +38,12 @@ def test_ollama_api(text):
 if __name__ == "__main__":
     # example text
     text = """
-    The non-existence of God is a fact that no longer needs proof.
-    Because we now know that almost all of the utopian stories and legends people have made up in their minds for years are untrue.
-    For example, we know that Zeus did not live on a mountain with his wife,
-    or that the moon was not split in two by the pedophile so-called prophet Muhammad.
+    Artificial intelligence and machine learning are rapidly evolving fields that 
+    are transforming various industries. Large language models like those provided 
+    by Ollama enable developers to create innovative applications in natural 
+    language processing, computer vision, and robotics.
     """
     
-    test_ollama_apit(text)
+    test_ollama_api(text)
 
 
