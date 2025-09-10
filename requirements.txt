@@ -1,0 +1,6 @@
+pytesseract
+pdfplumber
+PyPDF2
+python-docx
+pillow
+ollama
