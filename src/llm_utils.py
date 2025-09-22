@@ -2,7 +2,7 @@ from urllib import response
 import requests
 import json
 
-def test_ollama_api(text):
+def ollama_api(text):
 
     if not text or len(text.strip()) < 10:
         print("input is too short or empty")
