@@ -34,6 +34,7 @@
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\ocr_utils.py" />
     <Compile Include="tests\ollama_test.py" />
     <Compile Include="tests\pdf_ocr_test.py" />
   </ItemGroup>
