@@ -7,7 +7,6 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def scanned_pdf(path):
-    print("*"*20 + "scanned pdf testing" + "*"*20)
 
     if not os.path.exists(path):
         print("The file does not exist")

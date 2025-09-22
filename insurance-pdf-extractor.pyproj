@@ -30,6 +30,7 @@
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\Output\result.json" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
