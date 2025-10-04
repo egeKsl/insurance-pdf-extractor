@@ -7,7 +7,7 @@ if __name__ == "__main__":
     path = 'C:\\Users\\corle\\Downloads\\2025_09_10_13_17_Office_Lens[1].pdf'
     text = ocr_utils.scanned_pdf(path)
 
-    print("Extracted Text: ", text)
+    #print("Extracted Text: ", text)
 
     #LLM
     result = llm_utils.ollama_api(text)

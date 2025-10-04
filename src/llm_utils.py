@@ -1,6 +1,7 @@
 from urllib import response
 import requests
 import json
+import re
 
 def ollama_api(text):
 
@@ -39,9 +40,9 @@ def ollama_api(text):
            timeout = 60)
 
         if response.status_code == 200:
-
             result = response.json()
-            return result
+            clean = extract_json_from_response(result.get("response", ""))
+            return clean
             
 
         else:
@@ -49,3 +50,14 @@ def ollama_api(text):
 
     except Exception as e:
         print("A mistake had occured: exception" + e)
+
+
+
+def extract_json_from_response(response_text):
+    match = re.search(r"\{[\s\S]*\}", response_text)
+    if match:
+        try:
+            return json.loads(match.group())
+        except:
+            return {"raw_response": response_text}
+    return {"raw_response": response_text}
